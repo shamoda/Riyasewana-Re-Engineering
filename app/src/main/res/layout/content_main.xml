@@ -7,38 +7,38 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
-    <Button
-        android:id="@+id/sm_home_call_an_ambulance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:padding="5dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="10dp"
-        android:textAllCaps="true"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:text="@string/call_an_ambulance"
-        android:drawableLeft="@drawable/ambulance"
-        android:drawableRight="@drawable/free"
-        />
+<!--    <Button-->
+<!--        android:id="@+id/sm_home_call_an_ambulance"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:paddingStart="20dp"-->
+<!--        android:paddingEnd="10dp"-->
+<!--        android:textAllCaps="true"-->
+<!--        android:textSize="17sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:text="@string/call_an_ambulance"-->
+<!--        android:drawableLeft="@drawable/ambulance"-->
+<!--        android:drawableRight="@drawable/free"-->
+<!--        />-->
 
 
 
-    <TextView
-        android:id="@+id/sm_home_find_your_doctor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/find_your_doctor"
-        android:layout_below="@+id/sm_home_call_an_ambulance"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="10dp"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/sm_home_find_your_doctor"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/find_your_doctor"-->
+<!--        android:layout_below="@+id/sm_home_call_an_ambulance"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginLeft="22dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        />-->
 
 
     <RelativeLayout
@@ -56,42 +56,41 @@
         >
 
         //specialization
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/sm_home_specialization"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/specialization"
-            app:hintAnimationEnabled="true"
-            app:boxBackgroundMode="outline"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:endIconMode="dropdown_menu"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
-            >
-            <AutoCompleteTextView
-                android:id="@+id/sm_home_specialization_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:focusableInTouchMode="true"
-                android:focusable="false"
-                android:cursorVisible="false"
-                />
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/sm_home_specialization"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:hint="@string/specialization"-->
+<!--            app:hintAnimationEnabled="true"-->
+<!--            app:boxBackgroundMode="outline"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            app:endIconMode="dropdown_menu"-->
+<!--            app:boxCornerRadiusBottomEnd="16dp"-->
+<!--            app:boxCornerRadiusBottomStart="16dp"-->
+<!--            app:boxCornerRadiusTopEnd="16dp"-->
+<!--            app:boxCornerRadiusTopStart="16dp"-->
+<!--            >-->
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/sm_home_specialization_value"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:focusableInTouchMode="true"-->
+<!--                android:focusable="false"-->
+<!--                android:cursorVisible="false"-->
+<!--                />-->
 
-        </com.google.android.material.textfield.TextInputLayout>
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <SearchView
             android:id="@+id/sm_home_search_view"
             android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_below="@+id/sm_home_specialization"
             android:layout_marginTop="5dp"
-            android:layout_height="50dp"
-            android:background="@drawable/input_design"
-            />
+            android:background="@drawable/input_design" />
 
     </RelativeLayout>
 

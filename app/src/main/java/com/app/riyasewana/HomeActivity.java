@@ -50,11 +50,11 @@ import static android.Manifest.permission.CALL_PHONE;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    TextInputLayout textInputLayout;
-    AutoCompleteTextView dropDown;
-    AutoCompleteTextView specializationSelector;
-
-    Button callAnAmbulance;
+//    TextInputLayout textInputLayout;
+//    AutoCompleteTextView dropDown;
+//    AutoCompleteTextView specializationSelector;
+//
+//    Button callAnAmbulance;
     private SearchView searchDoctor;
 
     private DatabaseReference doctorRef;
@@ -69,48 +69,48 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
         setNavigationViewListener();
 
-        callAnAmbulance = findViewById(R.id.sm_home_call_an_ambulance);
-        specializationSelector = findViewById(R.id.sm_home_specialization_value);
+//        callAnAmbulance = findViewById(R.id.sm_home_call_an_ambulance);
+//        specializationSelector = findViewById(R.id.sm_home_specialization_value);
         searchDoctor = findViewById(R.id.sm_home_search_view);
 
         Paper.init(this);
 
         doctorRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
 
-        textInputLayout = findViewById(R.id.sm_home_specialization);
-        dropDown = findViewById(R.id.sm_home_specialization_value);
+//        textInputLayout = findViewById(R.id.sm_home_specialization);
+//        dropDown = findViewById(R.id.sm_home_specialization_value);
 
-        String[] specialization = new String[]{
-                "All",
-                "Allergists",
-                "Anesthesiologist",
-                "Cardiologist",
-                "Colon and Rectal Surgeon",
-                "Dermatologist",
-                "Endocrinologist",
-                "Family Physician",
-                "Gastroenterologist",
-                "Hematologist",
-                "Infectious Disease",
-                "Internist",
-                "Nephrologist",
-                "Neurologist",
-                "Oncologist",
-                "Pathologist",
-                "Psychiatrist",
-                "Radiologist",
-                "Rheumatologist",
-                "Sports Medicine",
-                "Urologist"
-        };
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                HomeActivity.this,
-                R.layout.drop_down_item,
-                specialization
-        );
-
-        dropDown.setAdapter(adapter);
+//        String[] specialization = new String[]{
+//                "All",
+//                "Allergists",
+//                "Anesthesiologist",
+//                "Cardiologist",
+//                "Colon and Rectal Surgeon",
+//                "Dermatologist",
+//                "Endocrinologist",
+//                "Family Physician",
+//                "Gastroenterologist",
+//                "Hematologist",
+//                "Infectious Disease",
+//                "Internist",
+//                "Nephrologist",
+//                "Neurologist",
+//                "Oncologist",
+//                "Pathologist",
+//                "Psychiatrist",
+//                "Radiologist",
+//                "Rheumatologist",
+//                "Sports Medicine",
+//                "Urologist"
+//        };
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+//                HomeActivity.this,
+//                R.layout.drop_down_item,
+//                specialization
+//        );
+//
+//        dropDown.setAdapter(adapter);
 
 
         searchDoctor.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -127,40 +127,40 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
 
 
-        specializationSelector.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                filterDoctor(charSequence.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-
-        callAnAmbulance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:1234"));
-
-                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-                    startActivity(intent);
-                } else {
-                    requestPermissions(new String[]{CALL_PHONE}, 1);
-                }
-            }
-        });
+//        specializationSelector.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                filterDoctor(charSequence.toString());
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
+//
+//
+//        callAnAmbulance.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Intent.ACTION_CALL);
+//                intent.setData(Uri.parse("tel:1234"));
+//
+//                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+//                    startActivity(intent);
+//                } else {
+//                    requestPermissions(new String[]{CALL_PHONE}, 1);
+//                }
+//            }
+//        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Digital Health");
+        toolbar.setTitle("RiyaSewana");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -202,7 +202,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
                 doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
-                doctorDetailsViewHolder.name.setText("Dr. " + doctor.getName());
+                doctorDetailsViewHolder.name.setText(doctor.getName());
                 Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
 
                 doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -244,7 +244,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
                 doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
-                doctorDetailsViewHolder.name.setText("Dr. " + doctor.getName());
+                doctorDetailsViewHolder.name.setText(doctor.getName());
                 Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
 
                 doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -278,8 +278,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
-                doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
-                doctorDetailsViewHolder.name.setText("Dr. " + doctor.getName());
+                doctorDetailsViewHolder.specialization.setText("Rs. "+doctor.getSpecialization());
+                doctorDetailsViewHolder.name.setText(doctor.getName());
                 Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
 
                 doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
