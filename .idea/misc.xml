@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_main.xml" value="0.14375" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_quick_health_checkups.xml" value="0.1334853090172239" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_splash_screen.xml" value="0.1334853090172239" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
