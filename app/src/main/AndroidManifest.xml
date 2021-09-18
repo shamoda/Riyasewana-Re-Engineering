@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app.digitalhealth">
+    package="com.app.riyasewana">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,47 +13,47 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowBloodreport"></activity>
-        <activity android:name=".showsugarReportactivity" />
-        <activity android:name=".SelectSessionActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name="com.app.riyasewana.ShowBloodreport"></activity>
+        <activity android:name="com.app.riyasewana.showsugarReportactivity" />
+        <activity android:name="com.app.riyasewana.SelectSessionActivity" />
+        <activity android:name="com.app.riyasewana.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SessionList" />
-        <activity android:name=".SugarReportActivity" />
-        <activity android:name=".QuickHealthCheckupsActivity" />
+        <activity android:name="com.app.riyasewana.SessionList" />
+        <activity android:name="com.app.riyasewana.SugarReportActivity" />
+        <activity android:name="com.app.riyasewana.QuickHealthCheckupsActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name="com.app.riyasewana.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".BMICalculatorActivity" />
-        <activity android:name=".BodyFatCal" />
-        <activity android:name=".AddBloodReport" />
-        <activity android:name=".UpdateDeletePage" />
-        <activity android:name=".DetailedReport" />
-        <activity android:name=".ReportSearch" />
-        <activity android:name=".ReportList" />
-        <activity android:name=".ResultFatCal" />
-        <activity android:name=".ManageUsersActivity" />
-        <activity android:name=".ManageDoctorsActivity" />
-        <activity android:name=".DoctorRegistrationActivity" />
-        <activity android:name=".AppoinmentHistoryActivity" />
-        <activity android:name=".ViewAppoinmentActivity" />
-        <activity android:name=".AdminDashboard" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".UserRegistrationActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".BMRcalculatorActivity" />
-        <activity android:name=".AddAppoinmentActivity" />
-        <activity android:name=".UpdateUserAccountActivity" />
-        <activity android:name=".CalorieCalculatorActivity" />
-        <activity android:name=".UpdateSessionActivity" />
-        <activity android:name=".AddSessionActivity" />
-        <activity android:name=".MyAppoinmentsActivity" />
+        <activity android:name="com.app.riyasewana.BMICalculatorActivity" />
+        <activity android:name="com.app.riyasewana.BodyFatCal" />
+        <activity android:name="com.app.riyasewana.AddBloodReport" />
+        <activity android:name="com.app.riyasewana.UpdateDeletePage" />
+        <activity android:name="com.app.riyasewana.DetailedReport" />
+        <activity android:name="com.app.riyasewana.ReportSearch" />
+        <activity android:name="com.app.riyasewana.ReportList" />
+        <activity android:name="com.app.riyasewana.ResultFatCal" />
+        <activity android:name="com.app.riyasewana.ManageUsersActivity" />
+        <activity android:name="com.app.riyasewana.ManageDoctorsActivity" />
+        <activity android:name="com.app.riyasewana.DoctorRegistrationActivity" />
+        <activity android:name="com.app.riyasewana.AppoinmentHistoryActivity" />
+        <activity android:name="com.app.riyasewana.ViewAppoinmentActivity" />
+        <activity android:name="com.app.riyasewana.AdminDashboard" />
+        <activity android:name="com.app.riyasewana.LoginActivity" />
+        <activity android:name="com.app.riyasewana.UserRegistrationActivity" />
+        <activity android:name="com.app.riyasewana.MainActivity" />
+        <activity android:name="com.app.riyasewana.BMRcalculatorActivity" />
+        <activity android:name="com.app.riyasewana.AddAppoinmentActivity" />
+        <activity android:name="com.app.riyasewana.UpdateUserAccountActivity" />
+        <activity android:name="com.app.riyasewana.CalorieCalculatorActivity" />
+        <activity android:name="com.app.riyasewana.UpdateSessionActivity" />
+        <activity android:name="com.app.riyasewana.AddSessionActivity" />
+        <activity android:name="com.app.riyasewana.MyAppoinmentsActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
