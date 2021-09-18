@@ -63,68 +63,75 @@ public class UpdateUserAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_user_account);
 
+        if (Prevalent.currentUser == null) {
+            startActivity(new Intent(UpdateUserAccountActivity.this, LoginActivity.class));
+        }
+
+        if (Prevalent.currentUser != null) {
+
 //        getting refference
-        closeBtn = findViewById(R.id.sm_update_user_close_btn);
-        updateBtn = findViewById(R.id.sm_update_user_update_btn);
-        changeProfileImageBtn = findViewById(R.id.sm_update_user_change_profile_img_btn);
-        profileImage = findViewById(R.id.sm_update_user_profile_img);
-        name = findViewById(R.id.sm_update_user_name_value);
-        phone = findViewById(R.id.sm_update_user_phone_value);
-        address = findViewById(R.id.sm_update_user_address_value);
-        password = findViewById(R.id.sm_update_user_password_value);
-        reEnterPassword = findViewById(R.id.sm_update_user_re_enter_password_value);
-        deleteAccountButton = findViewById(R.id.sm_update_user_delete_account_btn);
+            closeBtn = findViewById(R.id.sm_update_user_close_btn);
+            updateBtn = findViewById(R.id.sm_update_user_update_btn);
+            changeProfileImageBtn = findViewById(R.id.sm_update_user_change_profile_img_btn);
+            profileImage = findViewById(R.id.sm_update_user_profile_img);
+            name = findViewById(R.id.sm_update_user_name_value);
+            phone = findViewById(R.id.sm_update_user_phone_value);
+            address = findViewById(R.id.sm_update_user_address_value);
+            password = findViewById(R.id.sm_update_user_password_value);
+            reEnterPassword = findViewById(R.id.sm_update_user_re_enter_password_value);
+            deleteAccountButton = findViewById(R.id.sm_update_user_delete_account_btn);
 
-        imageRef = FirebaseStorage.getInstance().getReference().child("UsersImages");
+            imageRef = FirebaseStorage.getInstance().getReference().child("UsersImages");
 
-        deleteAccountButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            deleteAccountButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                confirmDelete();
+                    confirmDelete();
 
-            }
-        });
-
-        closeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(UpdateUserAccountActivity.this, HomeActivity.class));
-                finish();
-            }
-        });
-
-        userInfoDisplay(profileImage, name, phone, address, password);
-
-        updateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(password.getText().toString().equals(reEnterPassword.getText().toString())){
-                    if(checker.equals("clicked")){
-                        userInfoSaved();
-                    }
-                    else {
-                        updateOnlyUserInfo();
-                    }
                 }
-                else {
-                    Toast.makeText(UpdateUserAccountActivity.this, "Passwords are not matching.", Toast.LENGTH_SHORT).show();
+            });
+
+            closeBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(UpdateUserAccountActivity.this, HomeActivity.class));
+                    finish();
                 }
+            });
 
-            }
-        });
+            userInfoDisplay(profileImage, name, phone, address, password);
 
-        changeProfileImageBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checker = "clicked";
+            updateBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                CropImage.activity(imageUri)
-                        .setAspectRatio(1,1)
-                        .start(UpdateUserAccountActivity.this);
-            }
-        });
+                    if (password.getText().toString().equals(reEnterPassword.getText().toString())) {
+                        if (checker.equals("clicked")) {
+                            userInfoSaved();
+                        } else {
+                            updateOnlyUserInfo();
+                        }
+                    } else {
+                        Toast.makeText(UpdateUserAccountActivity.this, "Passwords are not matching.", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            });
+
+            changeProfileImageBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    checker = "clicked";
+
+                    CropImage.activity(imageUri)
+                            .setAspectRatio(1, 1)
+                            .start(UpdateUserAccountActivity.this);
+                }
+            });
+        } else {
+            startActivity(new Intent(UpdateUserAccountActivity.this, LoginActivity.class));
+        }
     }
 
 

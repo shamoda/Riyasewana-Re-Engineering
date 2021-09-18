@@ -3,9 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_login.xml" value="0.23867753623188406" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_main.xml" value="0.14375" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_quick_health_checkups.xml" value="0.1334853090172239" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_spare_parts_list.xml" value="0.14375" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_splash_screen.xml" value="0.1334853090172239" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_user_registration.xml" value="0.23867753623188406" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/app_bar_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/content_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/doctor_details_row.xml" value="0.16666666666666666" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/nav_header_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/menu/activity_main_drawer.xml" value="0.27447916666666666" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/menu/home.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

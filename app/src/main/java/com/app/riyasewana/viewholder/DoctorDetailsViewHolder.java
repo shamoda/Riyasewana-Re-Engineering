@@ -1,6 +1,7 @@
 package com.app.riyasewana.viewholder;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,9 @@ public class DoctorDetailsViewHolder extends RecyclerView.ViewHolder implements 
 {
     public TextView specialization;
     public TextView name;
-    public CircleImageView image;
+//    public CircleImageView image;
     public ItemClickListner listner;
+    public ImageView image;
 
     public DoctorDetailsViewHolder(@NonNull View itemView) {
         super(itemView);
