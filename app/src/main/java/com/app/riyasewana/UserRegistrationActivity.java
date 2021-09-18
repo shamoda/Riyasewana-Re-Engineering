@@ -85,9 +85,9 @@ public class UserRegistrationActivity extends AppCompatActivity {
         else if(TextUtils.isEmpty(txtReEnterPassword)){
             Toast.makeText(this, "Re-enter password cannot be empty.", Toast.LENGTH_SHORT).show();
         }
-        else if (txtPhone.length() != 10){
-            Toast.makeText(this, "Phone number must contain 10 digits.", Toast.LENGTH_SHORT).show();
-        }
+//        else if (txtPhone.length() != 10){
+//            Toast.makeText(this, "Phone number must contain 10 digits.", Toast.LENGTH_SHORT).show();
+//        }
         else if (txtPassword.length() < 4){
             Toast.makeText(this, "Password must contain at least 4 characters.", Toast.LENGTH_SHORT).show();
         }

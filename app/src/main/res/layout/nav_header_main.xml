@@ -32,7 +32,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginLeft="4dp"
-        android:text="@string/enter_name"
+        android:text="Welcome"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 

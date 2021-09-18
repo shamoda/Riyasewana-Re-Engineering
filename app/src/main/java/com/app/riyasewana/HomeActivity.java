@@ -343,8 +343,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         TextView userNameTextView = headerView.findViewById(R.id.sm_side_drawer_user_name);
         CircleImageView userProfileImage = headerView.findViewById(R.id.sm_side_drawer_user_profile_img);
 
-        userNameTextView.setText(Prevalent.currentUser.getName());
-        Picasso.get().load(Prevalent.currentUser.getProfileImage()).placeholder(R.drawable.ic_user).into(userProfileImage);
+        if (Prevalent.currentUser != null) {
+            userNameTextView.setText(Prevalent.currentUser.getName());
+            Picasso.get().load(Prevalent.currentUser.getProfileImage()).placeholder(R.drawable.ic_user).into(userProfileImage);
+        }
+
 
     }
 
@@ -354,29 +357,29 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item){
         int id = item.getItemId();
 
-        if(id == R.id.sm_nav_find_a_doctor){
+        if(id == R.id.sm_home){
 
         }
-        else  if(id == R.id.sm_nav_my_appointments){
-            startActivity(new Intent(HomeActivity.this, MyAppoinmentsActivity.class));
-        }
-        else if(id == R.id.sm_nav_my_reports){
-            startActivity(new Intent(HomeActivity.this, ReportList.class));
-        }
-        else if(id == R.id.sm_nav_quick_health_checkups){
-            startActivity(new Intent(HomeActivity.this, QuickHealthCheckupsActivity.class));
-        }
-        else if (id == R.id.sm_nav_settings){
+        else  if(id == R.id.sm_my_account){
             startActivity(new Intent(HomeActivity.this, UpdateUserAccountActivity.class));
         }
-        else if (id == R.id.sm_nav_logout){
-            Paper.book().destroy();
-
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+        else if(id == R.id.sm_my_sales){
+            startActivity(new Intent(HomeActivity.this, ReportList.class));
         }
+        else if(id == R.id.sm_vehicles){
+            startActivity(new Intent(HomeActivity.this, QuickHealthCheckupsActivity.class));
+        }
+        else if (id == R.id.sm_spare_parts){
+            startActivity(new Intent(HomeActivity.this, UpdateUserAccountActivity.class));
+        }
+//        else if (id == R.id.sm_nav_logout){
+//            Paper.book().destroy();
+//
+//            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            startActivity(intent);
+//            finish();
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

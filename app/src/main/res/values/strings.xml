@@ -1,6 +1,6 @@
 <resources>
 
-<!--    IT 19 1616 48-->
+    <!--    IT 19 1616 48-->
 
     <string name="app_name">Digital Health</string>
     <string name="call_an_ambulance">Call an Ambulance</string>
@@ -51,7 +51,6 @@
     <string name="logout">Logout</string>
     <string name="find_your_doctor">Find your Doctor :</string>
     <string name="re_enter_password">Re-enter Password</string>
-
 
 
     <string name="bmr_title">Basal Metabolic Rate (BMR)</string>

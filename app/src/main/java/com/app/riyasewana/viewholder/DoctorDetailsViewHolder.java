@@ -18,6 +18,7 @@ public class DoctorDetailsViewHolder extends RecyclerView.ViewHolder implements 
     public TextView name;
     public ImageView image;
     public ItemClickListner listner;
+ 
 
     public DoctorDetailsViewHolder(@NonNull View itemView) {
         super(itemView);

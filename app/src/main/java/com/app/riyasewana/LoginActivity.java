@@ -28,8 +28,9 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputEditText phone;
     private TextInputEditText password;
     private Button login;
+    private Button register;
     private CheckBox rememberMe;
-    private TextView adminPanel;
+//    private TextView adminPanel;
     private TextView notAdminPanel;
 
     private ProgressDialog pd;
@@ -45,8 +46,9 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.sm_login_password_value);
         login = findViewById(R.id.sm_login_btn);
         rememberMe = findViewById(R.id.sm_login_remember_me);
-        adminPanel = findViewById(R.id.sm_login_admin_panel);
+//        adminPanel = findViewById(R.id.sm_login_admin_panel);
         notAdminPanel = findViewById(R.id.sm_login_not_admin_panel);
+        register = findViewById(R.id.sm_login_register);
 
 //        initiallizing the Paper library
         Paper.init(this);
@@ -60,21 +62,28 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        adminPanel.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                login.setText("Login as an Admin");
-                adminPanel.setVisibility(View.INVISIBLE);
-                notAdminPanel.setVisibility(View.VISIBLE);
-                parentDbName = "Admins";
+                startActivity(new Intent(LoginActivity.this, UserRegistrationActivity.class));
             }
         });
+
+//        adminPanel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                login.setText("Login as an Admin");
+//                adminPanel.setVisibility(View.INVISIBLE);
+//                notAdminPanel.setVisibility(View.VISIBLE);
+//                parentDbName = "Admins";
+//            }
+//        });
 
         notAdminPanel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login.setText("Login");
-                adminPanel.setVisibility(View.VISIBLE);
+//                adminPanel.setVisibility(View.VISIBLE);
                 notAdminPanel.setVisibility(View.INVISIBLE);
                 parentDbName = "Users";
             }
@@ -95,9 +104,9 @@ public class LoginActivity extends AppCompatActivity {
         else if (TextUtils.isEmpty(txtPassword)){
             Toast.makeText(this, "Please enter password.", Toast.LENGTH_SHORT).show();
         }
-        else if (txtPhone.length() != 10){
-            Toast.makeText(this, "Please enter valid phone number.", Toast.LENGTH_SHORT).show();
-        }
+//        else if (txtPhone.length() != 10){
+//            Toast.makeText(this, "Please enter valid phone number.", Toast.LENGTH_SHORT).show();
+//        }
         else if (txtPassword.length() < 4){
             Toast.makeText(this, "Please enter valid password.", Toast.LENGTH_SHORT).show();
         }
