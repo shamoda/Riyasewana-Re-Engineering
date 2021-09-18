@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,64 +11,54 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="103dp"
         android:padding="10dp">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/sm_doctor_details_row_img"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/ic_user"
-            android:scaleType="centerCrop"
-            />
-
-        <TextView
-            android:id="@+id/sm_doctor_details_row_specialization"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/specialization"
-            android:layout_toRightOf="@+id/sm_doctor_details_row_img"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            />
 
         <TextView
             android:id="@+id/sm_doctor_details_row_specialization_value"
-            android:layout_width="wrap_content"
+            android:layout_width="211dp"
             android:layout_height="wrap_content"
-            android:text="@string/specialization"
+            android:layout_below="@+id/sm_doctor_details_row_name_value"
+            android:layout_alignStart="@+id/sm_doctor_details_row_name_value"
+            android:layout_alignBottom="@+id/sm_doctor_details_row_name_value"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="187dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="-32dp"
             android:layout_toRightOf="@+id/sm_doctor_details_row_specialization"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="10dp"
+            android:text="price"
             android:textColor="@android:color/black"
-            android:textStyle="bold"
-            />
-
-        <TextView
-            android:id="@+id/sm_doctor_details_row_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enter_name"
-            android:layout_toRightOf="@+id/sm_doctor_details_row_img"
-            android:layout_below="@+id/sm_doctor_details_row_specialization"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/sm_doctor_details_row_name_value"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/enter_name"
-            android:layout_toRightOf="@+id/sm_doctor_details_row_name"
             android:layout_below="@+id/sm_doctor_details_row_specialization"
-            android:layout_marginLeft="7dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="10dp"
-            android:textStyle="bold"
+            android:layout_toRightOf="@+id/sm_doctor_details_row_name"
+            android:text="title"
             android:textColor="@android:color/black"
-            />
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/sm_doctor_details_row_img"
+            android:layout_width="92dp"
+            android:layout_height="83dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="129dp"
+            android:layout_height="32dp"
+            android:layout_alignEnd="@+id/sm_doctor_details_row_specialization_value"
+            android:layout_alignBottom="@+id/sm_doctor_details_row_specialization_value"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="-35dp"
+            android:layout_toEndOf="@+id/sm_doctor_details_row_img"
+            android:text="12-06-2021" />
 
     </RelativeLayout>
 

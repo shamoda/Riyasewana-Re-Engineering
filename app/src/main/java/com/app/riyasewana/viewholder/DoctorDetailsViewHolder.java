@@ -1,6 +1,7 @@
 package com.app.riyasewana.viewholder;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,7 @@ public class DoctorDetailsViewHolder extends RecyclerView.ViewHolder implements 
 {
     public TextView specialization;
     public TextView name;
-    public CircleImageView image;
+    public ImageView image;
     public ItemClickListner listner;
 
     public DoctorDetailsViewHolder(@NonNull View itemView) {
@@ -27,9 +28,9 @@ public class DoctorDetailsViewHolder extends RecyclerView.ViewHolder implements 
 
     }
 
-    public void setItemClickListner(ItemClickListner listner){
-        this.listner = listner;
-    }
+//    public void setItemClickListner(ItemClickListner listner){
+//        this.listner = listner;
+//    }
 
     @Override
     public void onClick(View view) {
