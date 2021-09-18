@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportSearch"
+    android:orientation="vertical"
+    >
+
+    <Toolbar
+        android:id="@+id/insulinCal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+
+                />
+
+            <TextView
+                android:id="@+id/reportlistClose"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="-3dp"
+                android:text="Close"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="190dp"
+                android:layout_marginRight="24dp"
+
+                android:text="@string/SS_functionName"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    </Toolbar>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <SearchView
+            android:id="@+id/searchReport"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:autofillHints="@string/SS_cal"
+            android:background="@drawable/searchborder"
+            android:elevation="20dp"
+            android:queryHint="@string/searchpatientName" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ReposType"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/RepoTypes"
+            app:boxBackgroundMode="outline"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:endIconMode="dropdown_menu"
+            app:helperText="@string/RepoTypes"
+
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/drops_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:focusable="false"
+                android:cursorVisible="false"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ListView
+        android:id="@+id/listUser"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
