@@ -206,25 +206,28 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:hint="Condition"
                 app:hintAnimationEnabled="true"
                 app:boxBackgroundMode="outline"
                 android:layout_below="@id/sm_add_spare_title"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:endIconMode="clear_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:endIconMode="dropdown_menu"
                 app:boxCornerRadiusBottomEnd="16dp"
                 app:boxCornerRadiusBottomStart="16dp"
                 app:boxCornerRadiusTopEnd="16dp"
                 app:boxCornerRadiusTopStart="16dp"
                 >
-                <com.google.android.material.textfield.TextInputEditText
+                <AutoCompleteTextView
                     android:id="@+id/sm_add_spare_condition_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
                     android:textColor="@android:color/black"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:focusableInTouchMode="true"
+                    android:focusable="false"
+                    android:cursorVisible="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -287,21 +290,21 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             // Main Img
-            <Button
-                android:id="@+id/sm_add_spare_img1_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/sm_add_spare_additional"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="10dp"
-                android:padding="10dp"
-                android:text="Main Image"
-                android:textAllCaps="true"
-                android:textColor="@android:color/white"
-                android:textSize="12dp" />
+<!--            <Button-->
+<!--                android:id="@+id/sm_add_spare_img1_btn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_below="@id/sm_add_spare_additional"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:padding="10dp"-->
+<!--                android:text="Main Image"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="12dp" />-->
 
             <ImageView
                 android:id="@+id/sm_add_spare_img1"
@@ -309,26 +312,28 @@
                 android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="#F5F5F5"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/sm_add_spare_img1_btn"
-                android:src="@drawable/ic_vehicle"/>
+                android:layout_below="@id/sm_add_spare_additional"
+                android:src="@drawable/ic_image"/>
 
             // 2nd Img
-            <Button
-                android:id="@+id/sm_add_spare_img2_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/sm_add_spare_img1_btn"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="10dp"
-                android:padding="10dp"
-                android:text="2nd Image"
-                android:textAllCaps="true"
-                android:textColor="@android:color/white"
-                android:textSize="12dp" />
+<!--            <Button-->
+<!--                android:id="@+id/sm_add_spare_img2_btn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_below="@id/sm_add_spare_img1_btn"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:padding="10dp"-->
+<!--                android:text="2nd Image"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="12dp" />-->
 
             <ImageView
                 android:id="@+id/sm_add_spare_img2"
@@ -336,26 +341,28 @@
                 android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="#F5F5F5"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/sm_add_spare_img2_btn"
-                android:src="@drawable/ic_vehicle"/>
+                android:layout_below="@id/sm_add_spare_img1"
+                android:src="@drawable/ic_image"/>
 
             // 3nd Img
-            <Button
-                android:id="@+id/sm_add_spare_img3_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/sm_add_spare_img2_btn"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="10dp"
-                android:padding="10dp"
-                android:text="3nd Image"
-                android:textAllCaps="true"
-                android:textColor="@android:color/white"
-                android:textSize="12dp" />
+<!--            <Button-->
+<!--                android:id="@+id/sm_add_spare_img3_btn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_below="@id/sm_add_spare_img2_btn"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:padding="10dp"-->
+<!--                android:text="3nd Image"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="12dp" />-->
 
             <ImageView
                 android:id="@+id/sm_add_spare_img3"
@@ -363,9 +370,11 @@
                 android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="#F5F5F5"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/sm_add_spare_img3_btn"
-                android:src="@drawable/ic_vehicle"/>
+                android:layout_below="@id/sm_add_spare_img2"
+                android:src="@drawable/ic_image"/>
 
 
             <Button
