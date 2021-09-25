@@ -75,7 +75,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CalorieCalculatorActivity.this,QuickHealthCheckupsActivity.class);
+                Intent intent = new Intent(CalorieCalculatorActivity.this, DemoActivity.class);
                 startActivity(intent);
                 finish();
             }

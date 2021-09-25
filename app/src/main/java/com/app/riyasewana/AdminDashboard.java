@@ -24,7 +24,7 @@ public class AdminDashboard extends AppCompatActivity {
     private Button manageSessions;
     private Button manageAppoinments;
     private TextView logoutBtn;
-    private TextView doctorsCount;
+    private Button addSpare;
     private TextView customerCount;
 
     @Override
@@ -32,58 +32,64 @@ public class AdminDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
 
-        manageDoctors = findViewById(R.id.admin_dashboard_manage_doctors);
-        manageReports = findViewById(R.id.btnmanageReports);
-        manageCustomers = findViewById(R.id.admin_dashboard_manage_customers);
-        manageSessions = findViewById(R.id.btn_manage_sessions);
+//        manageDoctors = findViewById(R.id.admin_dashboard_manage_doctors);
+//        manageReports = findViewById(R.id.btnmanageReports);
+//        manageCustomers = findViewById(R.id.admin_dashboard_manage_customers);
+//        manageSessions = findViewById(R.id.btn_manage_sessions);
         logoutBtn = findViewById(R.id.admin_dashboard_logout_btn);
-        doctorsCount = findViewById(R.id.admin_dashboard_doctor_count);
-        customerCount = findViewById(R.id.admin_dashboard_customer_count);
-        manageAppoinments = findViewById(R.id.btn_manage_appoinments);
+        addSpare = findViewById(R.id.sm_add_spare);
+//        customerCount = findViewById(R.id.admin_dashboard_customer_count);
+//        manageAppoinments = findViewById(R.id.btn_manage_appoinments);
 
         Paper.init(this);
 
-        manageAppoinments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AdminDashboard.this,AppoinmentHistoryActivity.class));
-            }
-        });
+//        manageAppoinments.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(AdminDashboard.this,AppoinmentHistoryActivity.class));
+//            }
+//        });
 
         logoutBtn = findViewById(R.id.admin_dashboard_logout_btn);
-        doctorsCount = findViewById(R.id.admin_dashboard_doctor_count);
-        customerCount = findViewById(R.id.admin_dashboard_customer_count);
+//        doctorsCount = findViewById(R.id.admin_dashboard_doctor_count);
+//        customerCount = findViewById(R.id.admin_dashboard_customer_count);
 
 
-
-        manageCustomers.setOnClickListener(new View.OnClickListener() {
+        addSpare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminDashboard.this, ManageUsersActivity.class));
+                startActivity(new Intent(AdminDashboard.this, AddSpareActivity.class));
             }
         });
 
-        manageDoctors.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AdminDashboard.this, ManageDoctorsActivity.class));
-            }
-        });
+//        manageCustomers.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(AdminDashboard.this, ManageUsersActivity.class));
+//            }
+//        });
+
+//        manageDoctors.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(AdminDashboard.this, ManageDoctorsActivity.class));
+//            }
+//        });
 
 
-        manageReports.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AdminDashboard.this, ReportSearch.class));
-            }
-        });
+//        manageReports.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(AdminDashboard.this, ReportSearch.class));
+//            }
+//        });
 
-        manageSessions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AdminDashboard.this, SessionList.class));
-            }
-        });
+//        manageSessions.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(AdminDashboard.this, SessionList.class));
+//            }
+//        });
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,42 +104,42 @@ public class AdminDashboard extends AppCompatActivity {
         });
 
 
-        loadInsights();
+//        loadInsights();
 
 
     }
 
-    private void loadInsights() {
-
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-
-        rootRef.child("Doctors").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                long dCount = dataSnapshot.getChildrenCount();
-                doctorsCount.setText(String.valueOf(dCount));
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-        rootRef.child("Users").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                long cCount = dataSnapshot.getChildrenCount();
-                customerCount.setText(String.valueOf(cCount));
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-    }
+//    private void loadInsights() {
+//
+//        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+//
+//        rootRef.child("Doctors").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                long dCount = dataSnapshot.getChildrenCount();
+//                doctorsCount.setText(String.valueOf(dCount));
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        rootRef.child("Users").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                long cCount = dataSnapshot.getChildrenCount();
+//                customerCount.setText(String.valueOf(cCount));
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//    }
 
 
 

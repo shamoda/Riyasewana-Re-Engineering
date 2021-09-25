@@ -49,7 +49,7 @@ public class BMICalculatorActivity extends AppCompatActivity {
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BMICalculatorActivity.this, QuickHealthCheckupsActivity.class));
+                startActivity(new Intent(BMICalculatorActivity.this, DemoActivity.class));
                 finish();
             }
         });

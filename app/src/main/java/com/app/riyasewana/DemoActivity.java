@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class QuickHealthCheckupsActivity extends AppCompatActivity {
+public class DemoActivity extends AppCompatActivity {
 
     private Button BMI;
     private Button BMR;
@@ -19,7 +19,7 @@ public class QuickHealthCheckupsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quick_health_checkups);
+        setContentView(R.layout.activity_demo);
 
         BMI = findViewById(R.id.sm_quick_health_checkups_bmi);
         BMR = findViewById(R.id.sm_quick_health_checkups_bmr);
@@ -30,7 +30,7 @@ public class QuickHealthCheckupsActivity extends AppCompatActivity {
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(QuickHealthCheckupsActivity.this, HomeActivity.class));
+                startActivity(new Intent(DemoActivity.this, HomeActivity.class));
                 finish();
             }
         });
@@ -38,26 +38,26 @@ public class QuickHealthCheckupsActivity extends AppCompatActivity {
         BMI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(QuickHealthCheckupsActivity.this, BMICalculatorActivity.class));
+                startActivity(new Intent(DemoActivity.this, BMICalculatorActivity.class));
             }
         });
 
         BMR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(QuickHealthCheckupsActivity.this, BMRcalculatorActivity.class));
+                startActivity(new Intent(DemoActivity.this, BMRcalculatorActivity.class));
             }
         });
         calorie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(QuickHealthCheckupsActivity.this, CalorieCalculatorActivity.class));
+                startActivity(new Intent(DemoActivity.this, CalorieCalculatorActivity.class));
             }
         });
         bodyFat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(QuickHealthCheckupsActivity.this, BodyFatCal.class));
+                startActivity(new Intent(DemoActivity.this, BodyFatCal.class));
             }
         });
 

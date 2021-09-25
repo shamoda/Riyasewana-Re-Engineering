@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".AddSpareActivity"
+            android:exported="true" />
+        <activity
             android:name=".SparePartsListActivity"
             android:exported="true" />
         <activity android:name=".ShowBloodreport" />
@@ -28,7 +31,7 @@
         </activity>
         <activity android:name=".SessionList" />
         <activity android:name=".SugarReportActivity" />
-        <activity android:name=".QuickHealthCheckupsActivity" />
+        <activity android:name=".DemoActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"

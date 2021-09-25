@@ -1,19 +1,12 @@
 package com.app.riyasewana;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,14 +17,12 @@ import com.app.riyasewana.viewholder.DoctorDetailsViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -45,8 +36,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
-
-import static android.Manifest.permission.CALL_PHONE;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -364,10 +353,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(HomeActivity.this, UpdateUserAccountActivity.class));
         }
         else if(id == R.id.sm_my_sales){
-            startActivity(new Intent(HomeActivity.this, ReportList.class));
+            startActivity(new Intent(HomeActivity.this, AdminDashboard.class));
         }
         else if(id == R.id.sm_vehicles){
-            startActivity(new Intent(HomeActivity.this, QuickHealthCheckupsActivity.class));
+            startActivity(new Intent(HomeActivity.this, DemoActivity.class));
         }
         else if (id == R.id.sm_spare_parts){
             startActivity(new Intent(HomeActivity.this, UpdateUserAccountActivity.class));

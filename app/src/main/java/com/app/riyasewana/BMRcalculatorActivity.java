@@ -66,7 +66,7 @@ public class BMRcalculatorActivity extends AppCompatActivity {
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BMRcalculatorActivity.this,QuickHealthCheckupsActivity.class);
+                Intent intent = new Intent(BMRcalculatorActivity.this, DemoActivity.class);
                 startActivity(intent);
             }
         });

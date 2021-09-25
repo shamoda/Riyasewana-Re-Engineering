@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".QuickHealthCheckupsActivity">
+    tools:context=".DemoActivity">
 
     <Toolbar
         android:id="@+id/sm_quick_health_checkups_toolbar"

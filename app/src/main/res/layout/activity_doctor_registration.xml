@@ -261,18 +261,17 @@
         android:id="@+id/sm_doctor_registration_add_doctor_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:padding="12dp"
-        android:textAllCaps="false"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:text="@string/add_doctor"
-        android:textColor="@android:color/white"
         android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        />
+        android:padding="12dp"
+        android:text="@string/add_doctor"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
 
   </RelativeLayout>

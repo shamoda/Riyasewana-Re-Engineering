@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddSpareActivity">
+
+    <Toolbar
+        android:id="@+id/sm_add_spare_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Spare Parts"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:id="@+id/sm_add_spare_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="12dp"
+                />
+
+        </RelativeLayout>
+
+    </Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sm_add_spare_toolbar"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/sm_add_spare_contact_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sm_add_spare_toolbar"
+                android:text="Contact Info"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="12dp"
+                />
+
+
+            //name
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sm_add_spare_name"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/enter_name"
+                app:hintAnimationEnabled="true"
+                app:boxBackgroundMode="outline"
+                android:layout_below="@id/sm_add_spare_contact_info"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconMode="clear_text"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sm_add_spare_name_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //contact
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sm_add_spare_contact"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:hint="Contact No"
+                app:hintAnimationEnabled="true"
+                app:boxBackgroundMode="outline"
+                android:layout_below="@id/sm_add_spare_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconMode="clear_text"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sm_add_spare_contact_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            //location
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sm_add_spare_location"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:hint="Location"
+                app:hintAnimationEnabled="true"
+                app:boxBackgroundMode="outline"
+                android:layout_below="@id/sm_add_spare_contact"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconMode="clear_text"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sm_add_spare_location_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/sm_add_spare_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sm_add_spare_location"
+                android:text="Spare Part Info"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="12dp"
+                />
+
+            //title
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sm_add_spare_title"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:hint="Spare Part Title"
+                app:hintAnimationEnabled="true"
+                app:boxBackgroundMode="outline"
+                android:layout_below="@id/sm_add_spare_info"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconMode="clear_text"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sm_add_spare_title_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //condition
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sm_add_spare_condition"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:hint="Condition"
+                app:hintAnimationEnabled="true"
+                app:boxBackgroundMode="outline"
+                android:layout_below="@id/sm_add_spare_title"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconMode="clear_text"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sm_add_spare_condition_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //price
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sm_add_spare_price"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:hint="Price"
+                app:hintAnimationEnabled="true"
+                app:boxBackgroundMode="outline"
+                android:layout_below="@id/sm_add_spare_condition"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconMode="clear_text"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sm_add_spare_price_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //additional
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sm_add_spare_additional"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:hint="Additional Info"
+                app:hintAnimationEnabled="true"
+                app:boxBackgroundMode="outline"
+                android:layout_below="@id/sm_add_spare_price"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconMode="clear_text"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sm_add_spare_additional_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            // Main Img
+            <Button
+                android:id="@+id/sm_add_spare_img1_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/sm_add_spare_additional"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:text="Main Image"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/sm_add_spare_img1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/sm_add_spare_img1_btn"
+                android:src="@drawable/ic_vehicle"/>
+
+            // 2nd Img
+            <Button
+                android:id="@+id/sm_add_spare_img2_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/sm_add_spare_img1_btn"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:text="2nd Image"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/sm_add_spare_img2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/sm_add_spare_img2_btn"
+                android:src="@drawable/ic_vehicle"/>
+
+            // 3nd Img
+            <Button
+                android:id="@+id/sm_add_spare_img3_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/sm_add_spare_img2_btn"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:text="3nd Image"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/sm_add_spare_img3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/sm_add_spare_img3_btn"
+                android:src="@drawable/ic_vehicle"/>
+
+
+            <Button
+                android:id="@+id/sm_add_spare_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:padding="12dp"
+                android:text="Add Spare Part"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
