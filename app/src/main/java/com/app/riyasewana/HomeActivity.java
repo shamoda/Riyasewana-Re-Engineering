@@ -356,10 +356,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(HomeActivity.this, AdminDashboard.class));
         }
         else if(id == R.id.sm_vehicles){
-            startActivity(new Intent(HomeActivity.this, DemoActivity.class));
+            startActivity(new Intent(HomeActivity.this, VehicleActivity.class));
         }
         else if (id == R.id.sm_spare_parts){
-            startActivity(new Intent(HomeActivity.this, UpdateUserAccountActivity.class));
+            startActivity(new Intent(HomeActivity.this, SparePartsListActivity.class));
+        }
+        else if (id == R.id.sm_donations){
+            startActivity(new Intent(HomeActivity.this, DonationsActivity.class));
         }
 //        else if (id == R.id.sm_nav_logout){
 //            Paper.book().destroy();

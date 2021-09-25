@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SparePartsListActivity">
+    tools:context=".DonationsActivity">
 
     <Toolbar
         android:id="@+id/sm_add_spare_toolbar"
@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Spare Parts"
+                android:text="Donations"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:textSize="17sp"
@@ -41,8 +41,6 @@
         </RelativeLayout>
 
     </Toolbar>
-
-
 
 
 
