@@ -7,7 +7,7 @@
     tools:context=".SparePartsListActivity">
 
     <Toolbar
-        android:id="@+id/sm_add_spare_toolbar"
+        android:id="@+id/sm_spare_parts_list_toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimary"
@@ -27,7 +27,7 @@
                 />
 
             <TextView
-                android:id="@+id/sm_add_spare_close_btn"
+                android:id="@+id/sm_spare_parts_list_close_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/close_btn"
@@ -41,6 +41,28 @@
         </RelativeLayout>
 
     </Toolbar>
+
+
+    <SearchView
+        android:id="@+id/sm_spare_parts_list_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/sm_spare_parts_list_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/input_design"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sm_spare_parts_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/sm_spare_parts_list_search_view"
+        android:scrollbars="vertical"
+        />
 
 
 

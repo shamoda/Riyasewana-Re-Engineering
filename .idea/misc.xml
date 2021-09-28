@@ -15,6 +15,7 @@
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_login.xml" value="0.23867753623188406" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_main.xml" value="0.14375" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_manage_doctors.xml" value="0.2246376811594203" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_manage_users.xml" value="0.21467391304347827" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_quick_health_checkups.xml" value="0.1334853090172239" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_spare_parts_list.xml" value="0.14375" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_splash_screen.xml" value="0.1334853090172239" />
@@ -23,9 +24,11 @@
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_vehicle.xml" value="0.16145833333333334" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/app_bar_main.xml" value="0.16666666666666666" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/content_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/doctor_details_row.xml" value="0.16666666666666666" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/doctor_details_row.xml" value="0.2" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/drop_down_item.xml" value="0.21965579710144928" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/listing_row.xml" value="0.536" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/nav_header_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/patient_details_row.xml" value="0.21467391304347827" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/menu/activity_main_drawer.xml" value="0.27447916666666666" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/menu/home.xml" value="0.27447916666666666" />
       </map>

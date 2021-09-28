@@ -16,6 +16,7 @@ public class DoctorDetailsViewHolder extends RecyclerView.ViewHolder implements 
 {
     public TextView specialization;
     public TextView name;
+    public TextView date;
     public ImageView image;
     public ItemClickListner listner;
  
@@ -25,6 +26,7 @@ public class DoctorDetailsViewHolder extends RecyclerView.ViewHolder implements 
 
         image = itemView.findViewById(R.id.sm_doctor_details_row_img);
         specialization = itemView.findViewById(R.id.sm_doctor_details_row_specialization_value);
+        date = itemView.findViewById(R.id.sm_doctor_details_row_date_value);
         name = itemView.findViewById(R.id.sm_doctor_details_row_name_value);
 
     }
