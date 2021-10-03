@@ -5,7 +5,7 @@
       <map>
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_add_appoinment.xml" value="0.2246376811594203" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_add_session.xml" value="0.2246376811594203" />
-        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_add_spare.xml" value="0.2246376811594203" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_add_spare.xml" value="0.264" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.2246376811594203" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_appoinment_history.xml" value="0.2246376811594203" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_demo.xml" value="0.2246376811594203" />
@@ -17,6 +17,7 @@
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_manage_doctors.xml" value="0.2246376811594203" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_manage_users.xml" value="0.21467391304347827" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_quick_health_checkups.xml" value="0.1334853090172239" />
+        <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_spare_detailed.xml" value="0.264" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_spare_parts_list.xml" value="0.14375" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_splash_screen.xml" value="0.1334853090172239" />
         <entry key="..\:/SLIIT Lec/3rd Year/2nd sem/UEE/Group Project/Riyasewana Re-Engineering/app/src/main/res/layout/activity_update_user_account.xml" value="0.2246376811594203" />

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.riyasewana.model.Doctor;
 import com.app.riyasewana.model.Spare;
@@ -98,7 +99,9 @@ public class SparePartsListActivity extends AppCompatActivity {
                 doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        showAlertDialog(doctor.getPhone(), doctor.getName(), doctor.getImage());
+                        Intent intent = new Intent(SparePartsListActivity.this, SpareDetailedActivity.class);
+                        intent.putExtra("id", spare.getId());
+                        startActivity(intent);
                     }
                 });
             }
@@ -134,7 +137,9 @@ public class SparePartsListActivity extends AppCompatActivity {
                 doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        showAlertDialog(doctor.getPhone(), doctor.getName(), doctor.getImage());
+                        Intent intent = new Intent(SparePartsListActivity.this, SpareDetailedActivity.class);
+                        intent.putExtra("id", spare.getId());
+                        startActivity(intent);
                     }
                 });
             }
