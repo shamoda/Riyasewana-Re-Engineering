@@ -78,24 +78,25 @@ public class DonationsActivity extends AppCompatActivity {
                 txtAmount = amount.getText().toString();
 
 
-//                if (TextUtils.isEmpty(txtOwner)){
-//                    Toast.makeText(this, "Owner cannot be empty.", Toast.LENGTH_SHORT).show();
-//                }
-//                else if (TextUtils.isEmpty(txtcardNumber)){
-//                    Toast.makeText(this, "Card Number cannot be empty.", Toast.LENGTH_SHORT).show();
-//                }
-//                else if (TextUtils.isEmpty(txtExpDate)){
-//                    Toast.makeText(this, "Expire Date cannot be empty.", Toast.LENGTH_SHORT).show();
-//                }
-//                else if (TextUtils.isEmpty(txtCvv)){
-//                    Toast.makeText(this, "CVV cannot be empty.", Toast.LENGTH_SHORT).show();
-//                }
-//                else if(TextUtils.isEmpty(txtAmount)){
-//                    Toast.makeText(this, "Amount cannot be empty.", Toast.LENGTH_SHORT).show();
-//                }
-//                else {
-                    saveDonationDetails();
-                //}
+                if (TextUtils.isEmpty(txtOwner)){
+                    //Toast.makeText(this, "Owner cannot be empty.", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (TextUtils.isEmpty(txtcardNumber)){
+                    //Toast.makeText(this, "Card Number cannot be empty.", Toast.LENGTH_SHORT).show();
+                }
+                else if (TextUtils.isEmpty(txtExpDate)){
+                    //Toast.makeText(this, "Expire Date cannot be empty.", Toast.LENGTH_SHORT).show();
+                }
+                else if (TextUtils.isEmpty(txtCvv)){
+                    //Toast.makeText(this, "CVV cannot be empty.", Toast.LENGTH_SHORT).show();
+               }
+                else if(TextUtils.isEmpty(txtAmount)){
+                   //Toast.makeText(this, "Amount cannot be empty.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    //saveDonationDetails();
+                }
             }
 
             private void saveDonationDetails() {
