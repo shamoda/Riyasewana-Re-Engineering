@@ -99,6 +99,8 @@ public class DonationsActivity extends AppCompatActivity {
                 }
             }
 
+
+
             private void saveDonationDetails() {
                 HashMap<String, Object> donationMap = new HashMap<>();
                 donationMap.put("owner",txtOwner);
