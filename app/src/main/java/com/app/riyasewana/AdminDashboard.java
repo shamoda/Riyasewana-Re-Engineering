@@ -25,6 +25,7 @@ public class AdminDashboard extends AppCompatActivity {
     private Button manageAppoinments;
     private TextView logoutBtn;
     private Button addSpare;
+    private Button addVehicle;
     private TextView customerCount;
 
     @Override
@@ -38,6 +39,7 @@ public class AdminDashboard extends AppCompatActivity {
 //        manageSessions = findViewById(R.id.btn_manage_sessions);
         logoutBtn = findViewById(R.id.admin_dashboard_logout_btn);
         addSpare = findViewById(R.id.sm_add_spare);
+        addVehicle = findViewById(R.id.sm_add_vehicle);
 //        customerCount = findViewById(R.id.admin_dashboard_customer_count);
 //        manageAppoinments = findViewById(R.id.btn_manage_appoinments);
 
@@ -59,6 +61,12 @@ public class AdminDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminDashboard.this, AddSpareActivity.class));
+            }
+        });
+
+        addVehicle.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                startActivity(new Intent(AdminDashboard.this, AddVehicleActivity.class));
             }
         });
 

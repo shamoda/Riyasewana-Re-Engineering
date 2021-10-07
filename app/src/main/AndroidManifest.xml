@@ -28,6 +28,9 @@
         <activity
             android:name=".SparePartsListActivity"
             android:exported="true" />
+        <activity
+            android:name=".AddVehicleActivity"
+            android:exported="true" />
         <activity android:name=".ShowBloodreport" />
         <activity android:name=".showsugarReportactivity" />
         <activity android:name=".SelectSessionActivity" />
