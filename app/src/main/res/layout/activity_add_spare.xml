@@ -290,21 +290,21 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             // Main Img
-<!--            <Button-->
-<!--                android:id="@+id/sm_add_spare_img1_btn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:layout_below="@id/sm_add_spare_additional"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="20dp"-->
-<!--                android:layout_marginBottom="10dp"-->
-<!--                android:padding="10dp"-->
-<!--                android:text="Main Image"-->
-<!--                android:textAllCaps="true"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textSize="12dp" />-->
+            <!--            <Button-->
+            <!--                android:id="@+id/sm_add_spare_img1_btn"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:layout_below="@id/sm_add_spare_additional"-->
+            <!--                android:layout_marginLeft="20dp"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:layout_marginRight="20dp"-->
+            <!--                android:layout_marginBottom="10dp"-->
+            <!--                android:padding="10dp"-->
+            <!--                android:text="Main Image"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="@android:color/white"-->
+            <!--                android:textSize="12dp" />-->
 
             <ImageView
                 android:id="@+id/sm_add_spare_img1"
@@ -319,21 +319,21 @@
                 android:src="@drawable/ic_image"/>
 
             // 2nd Img
-<!--            <Button-->
-<!--                android:id="@+id/sm_add_spare_img2_btn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:layout_below="@id/sm_add_spare_img1_btn"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="20dp"-->
-<!--                android:layout_marginBottom="10dp"-->
-<!--                android:padding="10dp"-->
-<!--                android:text="2nd Image"-->
-<!--                android:textAllCaps="true"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textSize="12dp" />-->
+            <!--            <Button-->
+            <!--                android:id="@+id/sm_add_spare_img2_btn"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:layout_below="@id/sm_add_spare_img1_btn"-->
+            <!--                android:layout_marginLeft="20dp"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:layout_marginRight="20dp"-->
+            <!--                android:layout_marginBottom="10dp"-->
+            <!--                android:padding="10dp"-->
+            <!--                android:text="2nd Image"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="@android:color/white"-->
+            <!--                android:textSize="12dp" />-->
 
             <ImageView
                 android:id="@+id/sm_add_spare_img2"
@@ -348,21 +348,21 @@
                 android:src="@drawable/ic_image"/>
 
             // 3nd Img
-<!--            <Button-->
-<!--                android:id="@+id/sm_add_spare_img3_btn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:layout_below="@id/sm_add_spare_img2_btn"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="20dp"-->
-<!--                android:layout_marginBottom="10dp"-->
-<!--                android:padding="10dp"-->
-<!--                android:text="3nd Image"-->
-<!--                android:textAllCaps="true"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textSize="12dp" />-->
+            <!--            <Button-->
+            <!--                android:id="@+id/sm_add_spare_img3_btn"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:layout_below="@id/sm_add_spare_img2_btn"-->
+            <!--                android:layout_marginLeft="20dp"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:layout_marginRight="20dp"-->
+            <!--                android:layout_marginBottom="10dp"-->
+            <!--                android:padding="10dp"-->
+            <!--                android:text="3nd Image"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="@android:color/white"-->
+            <!--                android:textSize="12dp" />-->
 
             <ImageView
                 android:id="@+id/sm_add_spare_img3"
