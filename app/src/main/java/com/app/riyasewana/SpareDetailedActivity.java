@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,6 +56,14 @@ public class SpareDetailedActivity extends AppCompatActivity {
 //        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentUser.getPhone());
         spareImageRef = FirebaseStorage.getInstance().getReference().child("SpareImages");
         spareRef = FirebaseDatabase.getInstance().getReference().child("Spare").child(id);
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SpareDetailedActivity.this, HomeActivity.class));
+                finish();
+            }
+        });
 
         spareRef.addValueEventListener(new ValueEventListener() {
             @Override
