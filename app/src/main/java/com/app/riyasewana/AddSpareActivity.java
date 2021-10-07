@@ -81,7 +81,7 @@ public class AddSpareActivity extends AppCompatActivity {
         close = findViewById(R.id.sm_add_spare_close_btn);
         name = findViewById(R.id.sm_add_spare_name_value);
         contact = findViewById(R.id.sm_add_spare_contact_value);
-        address = findViewById(R.id.sm_add_spare_location_value);
+        address = findViewById(R.id.sm_donation_exp_date);
         title = findViewById(R.id.sm_add_spare_title_value);
 //        condition = findViewById(R.id.sm_add_spare_condition_value);
         price = findViewById(R.id.sm_add_spare_price_value);
