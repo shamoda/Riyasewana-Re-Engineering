@@ -1,61 +1,73 @@
 package com.app.riyasewana;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.app.riyasewana.model.Spare;
+import com.app.riyasewana.viewholder.DoctorDetailsViewHolder;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import io.paperdb.Paper;
 
 public class AdminDashboard extends AppCompatActivity {
 
-    private Button manageCustomers;
-    private Button manageDoctors;
-    private Button manageReports;
-    private Button manageSessions;
-    private Button manageAppoinments;
     private TextView logoutBtn;
+    private TextView vehicleSwitch;
+    private TextView spareSwitch;
     private Button addSpare;
-    private Button addVehicle;
-    private TextView customerCount;
+    private CardView vCard;
+    private CardView sCard;
+    private DatabaseReference spareRef;
+    private RecyclerView spareRecyclerView;
+    RecyclerView.LayoutManager spareLayoutManager;
+    private RecyclerView vehicleRecyclerView;
+    RecyclerView.LayoutManager vehicleLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
 
-//        manageDoctors = findViewById(R.id.admin_dashboard_manage_doctors);
-//        manageReports = findViewById(R.id.btnmanageReports);
-//        manageCustomers = findViewById(R.id.admin_dashboard_manage_customers);
-//        manageSessions = findViewById(R.id.btn_manage_sessions);
         logoutBtn = findViewById(R.id.admin_dashboard_logout_btn);
         addSpare = findViewById(R.id.sm_add_spare);
-        addVehicle = findViewById(R.id.sm_add_vehicle);
-//        customerCount = findViewById(R.id.admin_dashboard_customer_count);
-//        manageAppoinments = findViewById(R.id.btn_manage_appoinments);
+        vehicleSwitch = findViewById(R.id.sm_switch_vehicle);
+        spareSwitch = findViewById(R.id.sm_switch_spares);
+        vCard = findViewById(R.id.card5);
+        sCard = findViewById(R.id.Card6);
+
+        spareRef = FirebaseDatabase.getInstance().getReference().child("Spare");
+
+        spareRecyclerView = findViewById(R.id.sm_admin_spare_parts_list_view);
+        spareRecyclerView.setHasFixedSize(true);
+        spareLayoutManager = new LinearLayoutManager(this);
+        spareRecyclerView.setLayoutManager(spareLayoutManager);
+
+        vehicleRecyclerView = findViewById(R.id.sm_admin_vehicle_list_view);
+        vehicleRecyclerView.setHasFixedSize(true);
+        vehicleLayoutManager = new LinearLayoutManager(this);
+        vehicleRecyclerView.setLayoutManager(vehicleLayoutManager);
+
+        spareRecyclerView.setVisibility(View.INVISIBLE);
 
         Paper.init(this);
 
-//        manageAppoinments.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(AdminDashboard.this,AppoinmentHistoryActivity.class));
-//            }
-//        });
-
         logoutBtn = findViewById(R.id.admin_dashboard_logout_btn);
-//        doctorsCount = findViewById(R.id.admin_dashboard_doctor_count);
-//        customerCount = findViewById(R.id.admin_dashboard_customer_count);
-
 
         addSpare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,40 +76,6 @@ public class AdminDashboard extends AppCompatActivity {
             }
         });
 
-        addVehicle.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view) {
-                startActivity(new Intent(AdminDashboard.this, AddVehicleActivity.class));
-            }
-        });
-
-//        manageCustomers.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(AdminDashboard.this, ManageUsersActivity.class));
-//            }
-//        });
-
-//        manageDoctors.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(AdminDashboard.this, ManageDoctorsActivity.class));
-//            }
-//        });
-
-
-//        manageReports.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(AdminDashboard.this, ReportSearch.class));
-//            }
-//        });
-
-//        manageSessions.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(AdminDashboard.this, SessionList.class));
-//            }
-//        });
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,45 +89,65 @@ public class AdminDashboard extends AppCompatActivity {
             }
         });
 
+        vehicleSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                spareRecyclerView.setVisibility(View.INVISIBLE);
+                vehicleRecyclerView.setVisibility(View.VISIBLE);
+                vCard.setCardBackgroundColor(Color.GRAY);
+                sCard.setCardBackgroundColor(Color.WHITE);
+            }
+        });
 
-//        loadInsights();
-
+        spareSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                spareRecyclerView.setVisibility(View.VISIBLE);
+                vehicleRecyclerView.setVisibility(View.INVISIBLE);
+                sCard.setCardBackgroundColor(Color.GRAY);
+                vCard.setCardBackgroundColor(Color.WHITE);
+            }
+        });
 
     }
 
-//    private void loadInsights() {
-//
-//        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-//
-//        rootRef.child("Doctors").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                long dCount = dataSnapshot.getChildrenCount();
-//                doctorsCount.setText(String.valueOf(dCount));
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        rootRef.child("Users").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                long cCount = dataSnapshot.getChildrenCount();
-//                customerCount.setText(String.valueOf(cCount));
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+        FirebaseRecyclerOptions<Spare> options = new FirebaseRecyclerOptions.Builder<Spare>().setQuery(spareRef, Spare.class).build();
 
+        FirebaseRecyclerAdapter<Spare, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Spare, DoctorDetailsViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Spare spare) {
+                doctorDetailsViewHolder.specialization.setText("Rs. " + spare.getPrice());
+                doctorDetailsViewHolder.name.setText(spare.getTitle());
+                Picasso.get().load(spare.getImg1()).into(doctorDetailsViewHolder.image);
+
+                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(AdminDashboard.this, SpareDetailedActivity.class);
+                        intent.putExtra("id", spare.getId());
+                        startActivity(intent);
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public DoctorDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_details_row, parent, false);
+                DoctorDetailsViewHolder holder = new DoctorDetailsViewHolder(view);
+                return holder;
+            }
+        };
+
+//        setting adaptor to the recyclerview
+        spareRecyclerView.setAdapter(adapter);
+        adapter.startListening();
+
+    }
 
 
 }
