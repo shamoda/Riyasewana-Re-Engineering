@@ -238,7 +238,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     @Override
                     public void onClick(View view) {
                         //Add intent for session list
-                        Intent intent = new Intent(HomeActivity.this, SelectSessionActivity.class);
+                        Intent intent = new Intent(HomeActivity.this, VehicleDetailedView.class);
                         intent.putExtra("name", vehicle.getName());
                         intent.putExtra("phone", vehicle.getPrice());
                         intent.putExtra("specialization", vehicle.getCategory());
