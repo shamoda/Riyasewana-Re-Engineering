@@ -12,8 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.riyasewana.model.Doctor;
+import com.app.riyasewana.model.Vehicle;
 import com.app.riyasewana.prevalent.Prevalent;
 import com.app.riyasewana.viewholder.DoctorDetailsViewHolder;
+import com.app.riyasewana.viewholder.VehicleListViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
@@ -39,14 +41,10 @@ import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-//    TextInputLayout textInputLayout;
-//    AutoCompleteTextView dropDown;
-//    AutoCompleteTextView specializationSelector;
-//
-//    Button callAnAmbulance;
+
     private SearchView searchDoctor;
 
-    private DatabaseReference doctorRef;
+    private DatabaseReference vehicleRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
@@ -64,42 +62,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Paper.init(this);
 
-        doctorRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
-
-//        textInputLayout = findViewById(R.id.sm_home_specialization);
-//        dropDown = findViewById(R.id.sm_home_specialization_value);
-
-//        String[] specialization = new String[]{
-//                "All",
-//                "Allergists",
-//                "Anesthesiologist",
-//                "Cardiologist",
-//                "Colon and Rectal Surgeon",
-//                "Dermatologist",
-//                "Endocrinologist",
-//                "Family Physician",
-//                "Gastroenterologist",
-//                "Hematologist",
-//                "Infectious Disease",
-//                "Internist",
-//                "Nephrologist",
-//                "Neurologist",
-//                "Oncologist",
-//                "Pathologist",
-//                "Psychiatrist",
-//                "Radiologist",
-//                "Rheumatologist",
-//                "Sports Medicine",
-//                "Urologist"
-//        };
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-//                HomeActivity.this,
-//                R.layout.drop_down_item,
-//                specialization
-//        );
-//
-//        dropDown.setAdapter(adapter);
+       vehicleRef = FirebaseDatabase.getInstance().getReference().child("Vehicle");
 
 
         searchDoctor.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -176,28 +139,28 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void searchText(String s) {
-        FirebaseRecyclerOptions<Doctor> options;
+        FirebaseRecyclerOptions<Vehicle> options;
 
         if (s == null){
-            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(doctorRef, Doctor.class).build();
+            options = new FirebaseRecyclerOptions.Builder<Vehicle>().setQuery(vehicleRef,Vehicle.class).build();
         }
         else {
-            Query firebaseSearchQuery = doctorRef.orderByChild("name").startAt(s).endAt(s + "\uf8ff");
-            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(firebaseSearchQuery, Doctor.class).setLifecycleOwner(this).build();
+            Query firebaseSearchQuery = vehicleRef.orderByChild("name").startAt(s).endAt(s + "\uf8ff");
+            options = new FirebaseRecyclerOptions.Builder<Vehicle>().setQuery(firebaseSearchQuery,Vehicle.class).setLifecycleOwner(this).build();
         }
 
 
-        FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
+        FirebaseRecyclerAdapter<Vehicle, VehicleListViewHolder> adapter = new FirebaseRecyclerAdapter<Vehicle, VehicleListViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
-                doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
-                doctorDetailsViewHolder.name.setText(doctor.getName());
-                Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
+            protected void onBindViewHolder(@NonNull VehicleListViewHolder vehicleListViewHolder, int i, @NonNull final Vehicle vehicle) {
+                vehicleListViewHolder.specialization.setText(vehicle.getPrice());
+                vehicleListViewHolder.name.setText(vehicle.getName());
+                Picasso.get().load(vehicle.getImg1()).into(vehicleListViewHolder.image);
 
-                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                vehicleListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(HomeActivity.this, doctor.getName(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomeActivity.this, vehicle.getName(), Toast.LENGTH_SHORT).show();
                         //Add intent for session list
                     }
                 });
@@ -205,9 +168,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             @NonNull
             @Override
-            public DoctorDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public VehicleListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_details_row, parent, false);
-                DoctorDetailsViewHolder holder = new DoctorDetailsViewHolder(view);
+                VehicleListViewHolder holder = new VehicleListViewHolder(view);
                 return holder;
             }
         };
@@ -218,28 +181,28 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void filterDoctor(String s) {
-        FirebaseRecyclerOptions<Doctor> options;
+        FirebaseRecyclerOptions<Vehicle> options;
 
         if (s.equals("All")){
-            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(doctorRef, Doctor.class).build();
+            options = new FirebaseRecyclerOptions.Builder<Vehicle>().setQuery(vehicleRef,Vehicle.class).build();
         }
         else {
-            Query firebaseSearchQuery = doctorRef.orderByChild("specialization").startAt(s).endAt(s + "\uf8ff");
-            options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(firebaseSearchQuery, Doctor.class).setLifecycleOwner(this).build();
+            Query firebaseSearchQuery = vehicleRef.orderByChild("name").startAt(s).endAt(s + "\uf8ff");
+            options = new FirebaseRecyclerOptions.Builder<Vehicle>().setQuery(firebaseSearchQuery,Vehicle.class).setLifecycleOwner(this).build();
         }
 
 
-        FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
+        FirebaseRecyclerAdapter<Vehicle, VehicleListViewHolder> adapter = new FirebaseRecyclerAdapter<Vehicle, VehicleListViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
-                doctorDetailsViewHolder.specialization.setText(doctor.getSpecialization());
-                doctorDetailsViewHolder.name.setText(doctor.getName());
-                Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
+            protected void onBindViewHolder(@NonNull VehicleListViewHolder vehicleListViewHolder, int i, @NonNull final Vehicle vehicle) {
+                vehicleListViewHolder.specialization.setText("Rs "+vehicle.getPrice());
+               vehicleListViewHolder.name.setText(vehicle.getName());
+                Picasso.get().load(vehicle.getImg1()).into(vehicleListViewHolder.image);
 
-                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+              vehicleListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(HomeActivity.this, doctor.getName(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomeActivity.this, vehicle.getName(), Toast.LENGTH_SHORT).show();
                         //Add intent for session list
                     }
                 });
@@ -247,9 +210,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             @NonNull
             @Override
-            public DoctorDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public VehicleListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_details_row, parent, false);
-                DoctorDetailsViewHolder holder = new DoctorDetailsViewHolder(view);
+               VehicleListViewHolder holder = new VehicleListViewHolder(view);
                 return holder;
             }
         };
@@ -262,24 +225,24 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerOptions<Doctor> options = new FirebaseRecyclerOptions.Builder<Doctor>().setQuery(doctorRef, Doctor.class).build();
+        FirebaseRecyclerOptions<Vehicle> options = new FirebaseRecyclerOptions.Builder<Vehicle>().setQuery(vehicleRef, Vehicle.class).build();
 
-        FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Doctor, DoctorDetailsViewHolder>(options) {
+        FirebaseRecyclerAdapter<Vehicle, VehicleListViewHolder> adapter = new FirebaseRecyclerAdapter<Vehicle, VehicleListViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Doctor doctor) {
-                doctorDetailsViewHolder.specialization.setText("Rs. "+doctor.getSpecialization());
-                doctorDetailsViewHolder.name.setText(doctor.getName());
-                Picasso.get().load(doctor.getImage()).into(doctorDetailsViewHolder.image);
+            protected void onBindViewHolder(@NonNull VehicleListViewHolder vehicleListViewHolder, int i, @NonNull final Vehicle vehicle) {
+              vehicleListViewHolder.specialization.setText("Rs. "+vehicle.getPrice());
+               vehicleListViewHolder.name.setText(vehicle.getName());
+                Picasso.get().load(vehicle.getImg1()).into(vehicleListViewHolder.image);
 
-                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+              vehicleListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         //Add intent for session list
                         Intent intent = new Intent(HomeActivity.this, SelectSessionActivity.class);
-                        intent.putExtra("name", doctor.getName());
-                        intent.putExtra("phone", doctor.getPhone());
-                        intent.putExtra("specialization", doctor.getSpecialization());
-                        intent.putExtra("image", doctor.getImage());
+                        intent.putExtra("name", vehicle.getName());
+                        intent.putExtra("phone", vehicle.getPrice());
+                        intent.putExtra("specialization", vehicle.getCategory());
+                        intent.putExtra("image", vehicle.getImg1());
                         startActivity(intent);
                     }
                 });
@@ -287,9 +250,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             @NonNull
             @Override
-            public DoctorDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public VehicleListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_details_row, parent, false);
-                DoctorDetailsViewHolder holder = new DoctorDetailsViewHolder(view);
+                VehicleListViewHolder holder = new VehicleListViewHolder(view);
                 return holder;
             }
         };
@@ -356,7 +319,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(HomeActivity.this, AdminDashboard.class));
         }
         else if(id == R.id.sm_vehicles){
-            startActivity(new Intent(HomeActivity.this, VehicleActivity.class));
+            startActivity(new Intent(HomeActivity.this, VehicleListActivity.class));
         }
         else if (id == R.id.sm_spare_parts){
             startActivity(new Intent(HomeActivity.this, SparePartsListActivity.class));
