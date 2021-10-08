@@ -31,6 +31,7 @@ public class AdminDashboard extends AppCompatActivity {
     private TextView vehicleSwitch;
     private TextView spareSwitch;
     private Button addSpare;
+    private Button addVehicle;
     private CardView vCard;
     private CardView sCard;
     private DatabaseReference spareRef;
@@ -46,6 +47,7 @@ public class AdminDashboard extends AppCompatActivity {
 
         logoutBtn = findViewById(R.id.admin_dashboard_logout_btn);
         addSpare = findViewById(R.id.sm_add_spare);
+        addVehicle = findViewById(R.id.sm_add_vehicle);
         vehicleSwitch = findViewById(R.id.sm_switch_vehicle);
         spareSwitch = findViewById(R.id.sm_switch_spares);
         vCard = findViewById(R.id.card5);
@@ -73,6 +75,13 @@ public class AdminDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminDashboard.this, AddSpareActivity.class));
+            }
+        });
+
+        addVehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminDashboard.this, AddVehicleActivity.class));
             }
         });
 
