@@ -15,9 +15,6 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.riyasewana.model.Doctor;
-import com.app.riyasewana.model.Spare;
-import com.app.riyasewana.model.Users;
 import com.app.riyasewana.model.Vehicle;
 import com.app.riyasewana.viewholder.DoctorDetailsViewHolder;
 import com.app.riyasewana.viewholder.UserDetailsViewHolder;
@@ -44,12 +41,12 @@ public class VehicleListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vehicle_list);
 
 
-        closeBtn = findViewById(R.id.sm_spare_parts_list_close_btn);
-        searchSpare = findViewById(R.id.sm_spare_parts_list_search_view);
+        closeBtn = findViewById(R.id.ss_vehicles_list_close_btn);
+        searchSpare = findViewById(R.id.ss_vehicle_list_search_view);
 
         vehicleRef = FirebaseDatabase.getInstance().getReference().child("Vehicle");
 
-        recyclerView = findViewById(R.id.sm_spare_parts_list_view);
+        recyclerView = findViewById(R.id.ss_vehicle_list_view);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -84,23 +81,23 @@ public class VehicleListActivity extends AppCompatActivity {
             options = new FirebaseRecyclerOptions.Builder<Vehicle>().setQuery(vehicleRef,Vehicle.class).build();
         }
         else {
-            Query firebaseSearchQuery = vehicleRef.orderByChild("title").startAt(s).endAt(s + "\uf8ff");
+            Query firebaseSearchQuery = vehicleRef.orderByChild("name").startAt(s).endAt(s + "\uf8ff");
             options = new FirebaseRecyclerOptions.Builder<Vehicle>().setQuery(firebaseSearchQuery, Vehicle.class).setLifecycleOwner(this).build();
         }
 
 
-        FirebaseRecyclerAdapter<Vehicle, DoctorDetailsViewHolder> adapter = new FirebaseRecyclerAdapter<Vehicle, DoctorDetailsViewHolder>(options) {
+        FirebaseRecyclerAdapter<Vehicle, VehicleListViewHolder> adapter = new FirebaseRecyclerAdapter<Vehicle, VehicleListViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull DoctorDetailsViewHolder doctorDetailsViewHolder, int i, @NonNull final Vehicle vehicle) {
-                doctorDetailsViewHolder.specialization.setText("Rs. " + vehicle.getPrice());
-                doctorDetailsViewHolder.name.setText(vehicle.getName());
+            protected void onBindViewHolder(@NonNull VehicleListViewHolder vehicleListViewHolder, int i, @NonNull final Vehicle vehicle) {
+               vehicleListViewHolder.specialization.setText("Rs. " + vehicle.getPrice());
+               vehicleListViewHolder.name.setText(vehicle.getName());
 //                doctorDetailsViewHolder.date.setText(spare.getD);
-                Picasso.get().load(vehicle.getImg1()).into(doctorDetailsViewHolder.image);
+                Picasso.get().load(vehicle.getImg1()).into(vehicleListViewHolder.image);
 
-                doctorDetailsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+               vehicleListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(VehicleListActivity.this, SpareDetailedActivity.class);
+                        Intent intent = new Intent(VehicleListActivity.this, VehicleDetailedView.class);
                         intent.putExtra("id",vehicle.getId());
                         startActivity(intent);
                     }
@@ -109,9 +106,9 @@ public class VehicleListActivity extends AppCompatActivity {
 
             @NonNull
             @Override
-            public DoctorDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public VehicleListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctor_details_row, parent, false);
-                DoctorDetailsViewHolder holder = new DoctorDetailsViewHolder(view);
+                VehicleListViewHolder holder = new VehicleListViewHolder(view);
                 return holder;
             }
         };
@@ -138,7 +135,7 @@ public class VehicleListActivity extends AppCompatActivity {
                 vehicleListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(VehicleListActivity.this, SpareDetailedActivity.class);
+                        Intent intent = new Intent(VehicleListActivity.this, VehicleDetailedView.class);
                         intent.putExtra("id", vehicle.getId());
                         startActivity(intent);
                     }
@@ -154,7 +151,6 @@ public class VehicleListActivity extends AppCompatActivity {
             }
         };
 
-//        setting adaptor to the recyclerview
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
