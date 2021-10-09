@@ -21,9 +21,9 @@ public class UserDetailsViewHolder extends RecyclerView.ViewHolder implements Vi
     public UserDetailsViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        image = itemView.findViewById(R.id.sm_patient_details_row_img);
-        phone = itemView.findViewById(R.id.sm_patient_details_row_phone_value);
-        name = itemView.findViewById(R.id.sm_patient_details_row_name_value);
+//        image = itemView.findViewById(R.id.sm_patient_details_row_img);
+//        phone = itemView.findViewById(R.id.sm_patient_details_row_phone_value);
+//        name = itemView.findViewById(R.id.sm_patient_details_row_name_value);
 
     }
 

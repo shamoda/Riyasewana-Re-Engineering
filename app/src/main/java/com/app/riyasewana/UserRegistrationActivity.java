@@ -125,16 +125,9 @@ public class UserRegistrationActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 pd.dismiss();
 
-                                if(check != null && "check".equalsIgnoreCase(check)){
-                                    startActivity(new Intent(UserRegistrationActivity.this, ManageUsersActivity.class));
-                                    finish();
-                                    Toast.makeText(UserRegistrationActivity.this, "New Customer added successfully.", Toast.LENGTH_SHORT).show();
-                                }
-                                else {
                                     startActivity(new Intent(UserRegistrationActivity.this, LoginActivity.class));
                                     finish();
                                     Toast.makeText(UserRegistrationActivity.this, "Thank you for joining with us. Please login.", Toast.LENGTH_SHORT).show();
-                                }
 
                             }
                             else {

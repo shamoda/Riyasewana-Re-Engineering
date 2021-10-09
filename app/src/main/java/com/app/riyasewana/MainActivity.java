@@ -27,7 +27,6 @@ import static android.Manifest.permission.CALL_PHONE;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button callAnAmbulance;
     private Button login;
     private Button createAccount;
     private ProgressDialog pd;
@@ -37,26 +36,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        callAnAmbulance = findViewById(R.id.sm_welcome_call_an_ambulance);
         login = findViewById(R.id.sm_welcome_login);
         createAccount = findViewById(R.id.sm_welcome_create_account);
         pd = new ProgressDialog(this);
 
         Paper.init(this);
 
-//        callAnAmbulance.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Intent.ACTION_CALL);
-//                intent.setData(Uri.parse("tel:1234"));
-//
-//                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-//                    startActivity(intent);
-//                } else {
-//                    requestPermissions(new String[]{CALL_PHONE}, 1);
-//                }
-//            }
-//        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
