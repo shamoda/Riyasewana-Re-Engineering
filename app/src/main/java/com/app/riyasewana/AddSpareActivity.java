@@ -83,7 +83,6 @@ public class AddSpareActivity extends AppCompatActivity {
         contact = findViewById(R.id.sm_add_spare_contact_value);
         address = findViewById(R.id.ud_donation_exp_date_value);
         title = findViewById(R.id.sm_add_spare_title_value);
-//        condition = findViewById(R.id.sm_add_spare_condition_value);
         price = findViewById(R.id.sm_add_spare_price_value);
         additional = findViewById(R.id.sm_add_spare_additional_value);
         img1 = findViewById(R.id.sm_add_spare_img1);
@@ -187,16 +186,6 @@ public class AddSpareActivity extends AppCompatActivity {
 
         id = String.valueOf(System.currentTimeMillis());
 
-//        Calendar calendar = Calendar.getInstance();
-//
-//        SimpleDateFormat currentDate = new SimpleDateFormat("MM dd yyyy");
-//        saveCurrentDate = currentDate.format(calendar.getTime());
-//
-//        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-//        saveCurrentTime = currentTime.format(calendar.getTime());
-//
-//        doctorImageRandomKey = saveCurrentDate + saveCurrentTime;
-
         final StorageReference filePath = spareImageRef.child(id + ".jpg");
 
         final UploadTask uploadTask = filePath.putFile(img1Uri);
@@ -255,12 +244,7 @@ public class AddSpareActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     pd.dismiss();
-//                    if (dId != null){
-//                        Toast.makeText(DoctorRegistrationActivity.this, "Doctor details updated successfully.", Toast.LENGTH_SHORT).show();
-//                    }
-//                    else {
                     Toast.makeText(AddSpareActivity.this, "Spare Part Added Successfully.", Toast.LENGTH_SHORT).show();
-//                    }
 
                     startActivity(new Intent(AddSpareActivity.this, AdminDashboard.class));
                     finish();

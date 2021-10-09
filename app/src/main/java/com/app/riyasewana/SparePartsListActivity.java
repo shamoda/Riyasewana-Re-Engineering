@@ -25,7 +25,6 @@ import com.squareup.picasso.Picasso;
 public class SparePartsListActivity extends AppCompatActivity {
 
     private TextView closeBtn;
-//    private Button addNewCustomer;
     private SearchView searchSpare;
 
     private DatabaseReference spareRef;

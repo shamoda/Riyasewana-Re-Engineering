@@ -331,12 +331,7 @@ public class AddVehicleActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     pd.dismiss();
-//                    if (dId != null){
-//                        Toast.makeText(DoctorRegistrationActivity.this, "Doctor details updated successfully.", Toast.LENGTH_SHORT).show();
-//                    }
-//                    else {
                     Toast.makeText(AddVehicleActivity.this, "Vehicle Added Successfully.", Toast.LENGTH_SHORT).show();
-//                    }
 
                     startActivity(new Intent(AddVehicleActivity.this, AdminDashboard.class));
                     finish();
