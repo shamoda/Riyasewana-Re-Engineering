@@ -234,15 +234,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                vehicleListViewHolder.name.setText(vehicle.getName());
                 Picasso.get().load(vehicle.getImg1()).into(vehicleListViewHolder.image);
 
-              vehicleListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                vehicleListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //Add intent for session list
                         Intent intent = new Intent(HomeActivity.this, VehicleDetailedView.class);
-                        intent.putExtra("name", vehicle.getName());
-                        intent.putExtra("phone", vehicle.getPrice());
-                        intent.putExtra("specialization", vehicle.getCategory());
-                        intent.putExtra("image", vehicle.getImg1());
+                        intent.putExtra("id", vehicle.getId());
                         startActivity(intent);
                     }
                 });
