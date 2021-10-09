@@ -10,16 +10,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.app.riyasewana.model.Doctor;
 import com.app.riyasewana.model.Spare;
-import com.app.riyasewana.model.Users;
 import com.app.riyasewana.viewholder.DoctorDetailsViewHolder;
-import com.app.riyasewana.viewholder.UserDetailsViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -43,7 +38,6 @@ public class SparePartsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_spare_parts_list);
 
         closeBtn = findViewById(R.id.sm_spare_parts_list_close_btn);
-//        addNewCustomer = findViewById(R.id.sm_manage_users_add_new_patient_btn);
         searchSpare = findViewById(R.id.sm_spare_parts_list_search_view);
 
         spareRef = FirebaseDatabase.getInstance().getReference().child("Spare");

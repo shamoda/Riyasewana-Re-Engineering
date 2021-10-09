@@ -11,10 +11,8 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.riyasewana.model.Doctor;
 import com.app.riyasewana.model.Vehicle;
 import com.app.riyasewana.prevalent.Prevalent;
-import com.app.riyasewana.viewholder.DoctorDetailsViewHolder;
 import com.app.riyasewana.viewholder.VehicleListViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -56,8 +54,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
         setNavigationViewListener();
 
-//        callAnAmbulance = findViewById(R.id.sm_home_call_an_ambulance);
-//        specializationSelector = findViewById(R.id.sm_home_specialization_value);
         searchDoctor = findViewById(R.id.sm_home_search_view);
 
         Paper.init(this);
@@ -78,38 +74,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
-//        specializationSelector.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                filterDoctor(charSequence.toString());
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable editable) {
-//
-//            }
-//        });
-//
-//
-//        callAnAmbulance.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Intent.ACTION_CALL);
-//                intent.setData(Uri.parse("tel:1234"));
-//
-//                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-//                    startActivity(intent);
-//                } else {
-//                    requestPermissions(new String[]{CALL_PHONE}, 1);
-//                }
-//            }
-//        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("RiyaSewana");
