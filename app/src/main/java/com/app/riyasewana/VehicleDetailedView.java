@@ -1,20 +1,21 @@
 package com.app.riyasewana;
-   import androidx.appcompat.app.AppCompatActivity;
 
-   import android.content.Intent;
-   import android.os.Bundle;
-   import android.view.View;
-   import android.widget.ImageView;
-   import android.widget.TextView;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-   import com.google.firebase.database.DataSnapshot;
-   import com.google.firebase.database.DatabaseError;
-   import com.google.firebase.database.DatabaseReference;
-   import com.google.firebase.database.FirebaseDatabase;
-   import com.google.firebase.database.ValueEventListener;
-   import com.google.firebase.storage.FirebaseStorage;
-   import com.google.firebase.storage.StorageReference;
-   import com.squareup.picasso.Picasso;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 public class VehicleDetailedView extends AppCompatActivity {
 
@@ -66,8 +67,8 @@ public class VehicleDetailedView extends AppCompatActivity {
         vehicleRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    if (dataSnapshot.child("img1").exists()){
+                if (dataSnapshot.exists()) {
+                    if (dataSnapshot.child("img1").exists()) {
                         String tmpImg1 = dataSnapshot.child("img1").getValue().toString();
                         String tmpName = dataSnapshot.child("name").getValue().toString();
                         String tmpContact = dataSnapshot.child("contact").getValue().toString();
@@ -78,10 +79,10 @@ public class VehicleDetailedView extends AppCompatActivity {
                         String tmpId = dataSnapshot.child("id").getValue().toString();
 
                         Picasso.get().load(tmpImg1).into(img);
-                        name.setText("Name: "+tmpName);
-                        contact.setText("Contact: "+tmpContact);
-                        location.setText("Location: "+tmpAddress);
-                        price.setText("Rs."+tmpPrice);
+                        name.setText("Name: " + tmpName);
+                        contact.setText("Contact: " + tmpContact);
+                        location.setText("Location: " + tmpAddress);
+                        price.setText("Rs." + tmpPrice);
                         additional.setText(tmpAdditional);
                     }
                 }
