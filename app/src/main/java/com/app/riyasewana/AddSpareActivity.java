@@ -114,7 +114,7 @@ public class AddSpareActivity extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AddSpareActivity.this, AdminDashboard.class));
+                startActivity(new Intent(AddSpareActivity.this, Admin));
                 finish();
             }
         });

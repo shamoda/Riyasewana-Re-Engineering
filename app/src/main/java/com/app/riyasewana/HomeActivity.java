@@ -284,9 +284,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         else if (id == R.id.sm_spare_parts){
             startActivity(new Intent(HomeActivity.this, SparePartsListActivity.class));
         }
-        else if (id == R.id.sm_donations){
-            startActivity(new Intent(HomeActivity.this, DonationsActivity.class));
-        }
+//        else if (id == R.id.sm_donations){
+//            startActivity(new Intent(HomeActivity.this, DonationsActivity.class));
+//        }
 //        else if (id == R.id.sm_nav_logout){
 //            Paper.book().destroy();
 //

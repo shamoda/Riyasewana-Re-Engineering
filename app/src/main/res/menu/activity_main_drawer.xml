@@ -29,11 +29,11 @@
             android:icon="@drawable/ic_settings"
             android:title="Spare Parts"
             android:iconTint="@android:color/white"/>
-        <item
-            android:id="@+id/sm_donations"
-            android:icon="@drawable/ic_donations"
-            android:title="Donations"
-            android:iconTint="@android:color/white"/>
+<!--        <item-->
+<!--            android:id="@+id/sm_donations"-->
+<!--            android:icon="@drawable/ic_donations"-->
+<!--            android:title="Donations"-->
+<!--            android:iconTint="@android:color/white"/>-->
 <!--        <item-->
 <!--            android:id="@+id/sm_nav_logout"-->
 <!--            android:icon="@drawable/ic_logout"-->
